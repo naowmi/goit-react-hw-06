@@ -21,8 +21,6 @@ export const ContactForm = () => {
     const selectContact = useSelector(selectContacts);
 
     const handleSubmit = (values, actions) => { 
-        console.log(values);
-        console.log(selectContact);
         if (selectContact.find((contact) =>  contact.number === values.number)) {
             actions.resetForm()
             return toast(`This number ${values.number} is already exist`)
